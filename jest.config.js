@@ -7,5 +7,5 @@ module.exports = {
   testMatch: [
     './**/*.test.(js|jsx|ts|tsx)'
   ],
-  transformIgnorePatterns: ['**/node_modules/**']
+  transformIgnorePatterns: ['node_modules']
 }
