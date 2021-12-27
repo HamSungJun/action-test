@@ -23,5 +23,7 @@ jobs:
           cache-dependency-path: '**/package-lock.json'
       
       - run: ls -al
+      - run: ls -al .
+      - run: ls -al ..
       - run: npm run tsc
       - run: npm run test
