@@ -17,11 +17,16 @@ jobs:
       
       - name: Use NodeJS
         uses: actions/setup-node@v2
+        id: cache
         with:
           node-version-file: '.nvmrc'
           cache: 'npm'
           cache-dependency-path: '**/package-lock.json'
-      
+
+      - name: Install Dependencies If Cache Miss
+        if: steps.cache.outputs.cache-hit != 'true' 
+        run: npm ci
+        
       - run: ls -al
       - run: ls -al .
       - run: ls -al ..
