@@ -22,5 +22,6 @@ jobs:
           cache: 'npm'
           cache-dependency-path: '**/package-lock.json'
       
+      - run: ls -al ./node_modules/.bin
       - run: npm run tsc
       - run: npm run test
