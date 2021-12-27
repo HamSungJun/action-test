@@ -1,0 +1,24 @@
+name ci-test
+
+on:
+  push
+
+jobs:
+  test:
+    name: Test Tsc
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Use Checkout
+        uses: actions/checkout@v2
+      
+      - name: Use NodeJS
+        uses: actions/setup-node@v2
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'npm'
+          cache-dependency-path: '**/package-lock.json'
+      
+      - run: npm run tsc
+      - run: npm run test
