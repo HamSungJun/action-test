@@ -27,5 +27,6 @@ jobs:
         if: steps.cache.outputs.cache-hit != 'true' 
         run: npm ci
 
+      - run: jest --showConfig
       - run: npm run tsc
       - run: npm run test
