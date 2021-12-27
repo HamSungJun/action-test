@@ -1,5 +1,5 @@
-"use strict";
-function foo(name) {
-    console.log(name);
+'use strict'
+export function foo (name) {
+  console.log(name)
 }
-foo();
+foo()

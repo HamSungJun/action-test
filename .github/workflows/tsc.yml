@@ -26,9 +26,6 @@ jobs:
       - name: Install Dependencies If Cache Miss
         if: steps.cache.outputs.cache-hit != 'true' 
         run: npm ci
-        
-      - run: ls -al
-      - run: ls -al .
-      - run: ls -al ..
+
       - run: npm run tsc
       - run: npm run test
