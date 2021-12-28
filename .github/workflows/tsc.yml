@@ -26,12 +26,12 @@ jobs:
         with:
           path: '**/node_modules'
           key: npm-packages-${{ hashFiles('**/package-lock.json') }}
-          
+
       - name: Install Dependencies
         if: steps.cache.outputs.cache-hit != 'true'
         run: npm ci
 
       - run: ls -al
-      - run: ls -al ~/.npm
+      # - run: ls -al ~/.npm
       - run: npm run tsc
       - run: npm run test
