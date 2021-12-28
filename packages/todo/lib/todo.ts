@@ -1,4 +1,4 @@
 function bar (name?: string) {
   console.log(name)
 }
-bar()
+bar('123')
