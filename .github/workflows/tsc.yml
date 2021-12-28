@@ -13,15 +13,19 @@ jobs:
     steps:
       - name: Use Checkout
         uses: actions/checkout@v2
+
       - name: Use NodeJS
         uses: actions/setup-node@v2
         id: cache
+
         with:
           node-version-file: '.nvmrc'
-          cache: 'npm',
+          cache: 'npm'
           cache-dependency-path: '**/package-lock.json'
+
       - name: Install Dependencies
         if: steps.cache.outputs.cache-hit != 'true'
+
         run: npm ci
       - run: npm run tsc
       - run: npm run test
